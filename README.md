@@ -19,10 +19,11 @@
          wsl --version
 
 ## step 4 : in your cmd first go to current working directory
-         docker build -t california-app .
+         - docker build -t california-app .
 
-         it will run all the commands 
+         - it will run all the commands 
 
-step 5 : if image successfully available we can check
+## step 5 : if image successfully available we can check
 
          in cmd type - docker images(we can see california app name)
+
