@@ -1,6 +1,6 @@
-step 1 : we need to install the docker desktop
+## step 1 : we need to install the docker desktop
 
-step 2 : we need to crreate a dockerfile for guidelines
+## step 2 : we need to crreate a dockerfile for guidelines
         step 1 : we need to install the 
         - we will give the python image with version
         step 2 : install the python
@@ -9,7 +9,7 @@ step 2 : we need to crreate a dockerfile for guidelines
         step 4 : CMD python -m uvicorn --host --port --reload
         step 5 : last we will write how to run command
 
-step 3 : open docker desktop
+## step 3 : open docker desktop
          skip email
          if you get wsl error
          run below commands in CMD
@@ -18,10 +18,11 @@ step 3 : open docker desktop
          wsl --set-default-version 2
          wsl --version
 
-step 4 : in your cmd first go to current working directory
+## step 4 : in your cmd first go to current working directory
          docker build -t california-app .
 
          it will run all the commands 
 
 step 5 : if image successfully available we can check
+
          in cmd type - docker images(we can see california app name)
