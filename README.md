@@ -1,7 +1,7 @@
 ## step 1 : we need to install the docker desktop
 
 ## step 2 : we need to crreate a dockerfile for guidelines
-        step 1 : we need to install the 
+        **step 1 : we need to install the**
         - we will give the python image with version
         step 2 : install the python
         step 3 : install the packages
@@ -26,4 +26,5 @@
 ## step 5 : if image successfully available we can check
 
          in cmd type - docker images(we can see california app name)
+
 
