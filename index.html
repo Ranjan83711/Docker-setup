@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>California Housing Price Prediction</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    height:100vh;
+
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/edc100123egan-002-6500742f5feb7.jpg?crop=0.688xw:1.00xh;0.157xw,0&resize=1120:*");
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:420px;
+    padding:30px;
+    border-radius:12px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+    color:white;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+input{
+    width:95%;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+    background:#ff7a18;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff5a00;
+}
+
+#result{
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🏠 California Housing Price Predictor</h2>
+
+<input id="MedInc" placeholder="Median Income">
+<input id="HouseAge" placeholder="House Age">
+<input id="AveRooms" placeholder="Average Rooms">
+<input id="AveBedrms" placeholder="Average Bedrooms">
+<input id="Population" placeholder="Population">
+<input id="AveOccup" placeholder="Average Occupancy">
+
+<button onclick="predict()">Predict Price</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+async function predict(){
+
+    const params = new URLSearchParams({
+        MedInc: document.getElementById("MedInc").value,
+        HouseAge: document.getElementById("HouseAge").value,
+        AveRooms: document.getElementById("AveRooms").value,
+        AveBedrms: document.getElementById("AveBedrms").value,
+        Population: document.getElementById("Population").value,
+        AveOccup: document.getElementById("AveOccup").value
+    });
+
+    const response = await fetch("/predict?" + params);
+    const data = await response.json();
+
+    document.getElementById("result").innerHTML =
+        "💰 Predicted House Price: <br><span style='font-size:28px'>" +
+        data["Predicted House Price"] +
+        "</span>";
+}
+
+</script>
+
+</body>
+</html>
